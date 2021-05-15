@@ -1,0 +1,12 @@
+{
+  "name": "tabs",
+  "displayName": "tabs",
+  "expo": {
+    "name": "tabs",
+    "slug": "tabs",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
