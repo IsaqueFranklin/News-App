@@ -1,11 +1,13 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState, useEffect} from 'react'
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import PostList from '../components/PostList'
 
-export default function Cripto() {
+export default function Tech() {
+
     return (
-        <View style={styles.container}>
-            <Text style={styles.textil}>Cripto</Text>
-        </View>
+        <ScrollView>
+            <PostList pais={'br'} genero={'technology'} />
+        </ScrollView>
     )
 }
 
@@ -15,9 +17,8 @@ const styles = StyleSheet.create({
       backgroundColor: '#152C2C',
       alignItems: 'center',
       justifyContent: 'center',
+      marginTop: 55,
+      marginBottom: 100,
     },
 
-    textil: {
-        color: '#fff',
-    },
   });

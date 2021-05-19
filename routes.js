@@ -38,7 +38,7 @@ export default function Routes(){
             }
         }}>
             <Tab.Screen 
-            name="Tech" 
+            name="Geral" 
             component={Tech} 
             options={{
                 tabBarIcon: ({ size, color }) => (
@@ -50,7 +50,7 @@ export default function Routes(){
             />
 
             <Tab.Screen 
-            name="Cripto" 
+            name="Tech" 
             component={Cripto} 
             options={{
                 tabBarIcon: ({ size, color }) => (
@@ -60,7 +60,7 @@ export default function Routes(){
             />
 
             <Tab.Screen 
-            name="Startups" 
+            name="Business" 
             component={Startups}
             options={{
                 tabBarIcon: ({ size, color }) => (
@@ -70,21 +70,11 @@ export default function Routes(){
             />
 
             <Tab.Screen 
-            name="Space" 
+            name="Ciência" 
             component={Space}
             options={{
                 tabBarIcon: ({ size, color }) => (
                 <FontAwesome name="space-shuttle" size={size} color={color} />                
-                )
-            }} 
-            />
-
-            <Tab.Screen 
-            name="Gadgets" 
-            component={Gadgets}
-            options={{
-                tabBarIcon: ({ size, color }) => (
-                    <MaterialIcons name="fiber-smart-record" size={size} color={color} />  
                 )
             }} 
             />
