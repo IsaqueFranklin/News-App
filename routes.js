@@ -21,17 +21,18 @@ export default function Routes(){
             style:{
                 borderTopColor: 'transparent',
                 position: 'absolute',
-                bottom: 20,
-                left: 20,
-                right: 20,
+                bottom: 0,
+                left: 0,
+                right: 0,
                 elevation: 0,
-                backgroundColor: '#fff',
-                borderRadius: 15,
+                backgroundColor: '#495057',
+                borderRadius: 0,
                 height: 70,
                 ...style.shadow
 
             },
-            activeTintColor: '#152C2C',
+            activeTintColor: '#ADB5BD',
+            inactiveTintColor: '#fff',
             tabStyle:{
                 paddingBottom: 5,
                 paddingTop: 5,

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, Text, View, ActivityIndicator, Image, FlatList, Pressable } from 'react-native'
-import {WebView} from 'react-native-webview'
+import { StyleSheet, Text, View, ActivityIndicator, Image, FlatList, Pressable, TouchableOpacity } from 'react-native'
+import Header from './Header'
+import ContentView from './ContentView'
 
 function PostList(props) {
 
@@ -8,7 +9,6 @@ function PostList(props) {
     
     const [isLoading, setLoading] = useState(true)
     const [news, setNews] = useState([]);
-    const Sour = (bitch) => <WebView source={{uri:bitch}} />
 
     useEffect(() => {
         fetch(`https://newsapi.org/v2/top-headlines?country=${pais}&category=${genero}&apiKey=741e3347eb154f3a8d9ed7c5940984ad`)
@@ -19,11 +19,12 @@ function PostList(props) {
           console.log(news.articles)
       }, []);
 
-
     return (
         <View style={styles.container}>
+            <Header />
                 {isLoading ? <ActivityIndicator/> : (
                     <FlatList
+                    style={styles.list}
                     data={news.articles}
                     keyExtractor={({ url }, index) => url}
                     renderItem={({ item }) => (
@@ -32,7 +33,7 @@ function PostList(props) {
 
                     <Pressable
                         
-                        onPress={<WebView source={{uri:item.url}} />}
+                        onPress={() => {ContentView({uri:item.url})}}
                     >
 
                     <Image source={{uri:item.urlToImage}} style={styles.image} resizeMode="cover" />
@@ -50,33 +51,34 @@ function PostList(props) {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        marginTop: 70,
-        marginBottom: 90,
+        marginTop: 53,
+        marginBottom: 70,
+        backgroundColor: '#212529',
     },
 
     textil: {
-        color: '#121212',
+        color: '#fff',
         marginBottom: 20,
         marginTop: 30,
-        marginLeft: 20,
-        marginRight: 20,
+        marginLeft: 10,
+        marginRight: 10,
         justifyContent: 'center',
     },
 
     news: {
         marginBottom: 10,
-        marginTop: 20,
+        marginTop: 10,
         padding: 20,
     },
 
     back: {
-        backgroundColor: '#fff',
+        backgroundColor: '#343A40',
         flex: 1,
         marginBottom: 10,
         padding: 10,
         marginTop: 10,
-        marginLeft: 25,
-        marginRight: 25,
+        marginLeft: 20,
+        marginRight: 20,
         borderRadius: 20,
         shadowColor: '#7F5DF0',   
         shadowOffset: {
@@ -108,10 +110,14 @@ const styles = StyleSheet.create({
     image: {
         minWidth: 290,
         padding: 10,
-        height: 150,
+        height: 200,
         borderRadius: 12,
         alignItems: 'center',
     },
+
+    list: {
+        marginTop: 50,
+    }
 });
 
 export default PostList

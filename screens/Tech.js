@@ -14,10 +14,10 @@ export default function Tech() {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#152C2C',
+      backgroundColor: '#212529',
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: 55,
+      marginTop: 0,
       marginBottom: 100,
     },
 
